@@ -9,16 +9,14 @@ namespace MiddlewaresSandbox.Repositories
     public class InMemoryErrorsRepository : IErrorsRepository
     {
         private readonly IList<Error> Errors = new List<Error>();
-        public Task AddError(Error error)
+        public void AddError(Error error)
         {
             Errors.Add(error);
-
-            return Task.CompletedTask;
         }
 
-        public Task<IList<Error>> GetErrors()
+        public IEnumerable<Error> GetErrors()
         {
-            return Task.FromResult(Errors);
+            return Errors.ToArray();
         }
     }
 }

@@ -8,8 +8,8 @@ namespace MiddlewaresSandbox.Repositories
 {
     public interface IErrorsRepository
     {
-        Task<IList<Error>> GetErrors();
+        IEnumerable<Error> GetErrors();
 
-        Task AddError(Error error);
+        void AddError(Error error);
     }
 }

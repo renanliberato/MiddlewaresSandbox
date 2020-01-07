@@ -40,7 +40,7 @@ namespace MiddlewaresSandbox.Middlewares
                         e.StackTrace
                     );
 
-                    await ErrorsRepository.AddError(error);
+                    ErrorsRepository.AddError(error);
                 }
 
                 throw e;

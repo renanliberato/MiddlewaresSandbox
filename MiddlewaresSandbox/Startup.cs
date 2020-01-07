@@ -12,6 +12,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using MiddlewaresSandbox.Middlewares;
 using MiddlewaresSandbox.Repositories;
+using MiddlewaresSandbox.Services;
 using NetFramework.Uuid;
 
 namespace MiddlewaresSandbox
@@ -31,7 +32,8 @@ namespace MiddlewaresSandbox
             services.AddControllers();
             services.AddGuid();
 
-            services.AddSingleton<IErrorsRepository, InMemoryErrorsRepository>();
+            services.AddLiteDb(@"bug.db");
+            services.AddSingleton<IErrorsRepository, LiteDbErrorsRepository>();
             services.AddErrorLog();
         }
 

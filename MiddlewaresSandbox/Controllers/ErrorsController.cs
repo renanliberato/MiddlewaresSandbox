@@ -23,7 +23,7 @@ namespace MiddlewaresSandbox.Controllers
         [HttpGet]
         public async Task<IEnumerable<Error>> Get()
         {
-            return await ErrorsRepository.GetErrors();
+            return ErrorsRepository.GetErrors();
         }
     }
 }

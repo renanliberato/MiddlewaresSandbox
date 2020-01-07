@@ -7,17 +7,17 @@ namespace MiddlewaresSandbox.Models
 {
     public class Error
     {
-        public Guid RequestGuid { get; }
+        public Guid RequestGuid { get; set; }
 
-        public string Url { get; }
+        public string Url { get; set; }
 
-        public string Method { get; }
+        public string Method { get; set; }
 
-        public string Body { get; }
+        public string Body { get; set; }
 
-        public DateTime CreatedAt { get; }
-        public string Description { get; }
-        public string StackTrace { get; }
+        public DateTime CreatedAt { get; set; }
+        public string Description { get; set; }
+        public string StackTrace { get; set; }
 
         public Error(Guid requestGuid, string url, string method, string body, DateTime createdAt, string description, string stackTrace)
         {
@@ -28,6 +28,10 @@ namespace MiddlewaresSandbox.Models
             CreatedAt = createdAt;
             Description = description;
             StackTrace = stackTrace;
+        }
+
+        public Error()
+        {
         }
     }
 }
